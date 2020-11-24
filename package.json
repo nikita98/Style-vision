@@ -7,7 +7,8 @@
     "lint:styles": "stylelint src",
     "lint:scripts": "eslint src",
     "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js --colors",
-    "start": "webpack-dev-server --open --config webpack/webpack.config.dev.js"
+    "start": "webpack-dev-server --open --config webpack/webpack.config.dev.js",
+    "fast-build": "cross-env NODE_ENV=development webpack --config webpack/webpack.config.dev.js --colors"
   },
   "repository": {
     "type": "git",

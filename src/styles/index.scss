@@ -225,12 +225,27 @@ h2 {
 .intro {
   margin-top: 95px;
   height: calc(100vh - 95px);
-  background-image: url(../img/bg-sofa.jpg);
   background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  &__bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__bg-img {
+    width: 100%;
+    height: 100%;
+  }
 
   &__content {
     margin-top: 3vh;
@@ -455,6 +470,7 @@ h2 {
 
   &__img-wrap {
     overflow: hidden;
+    margin-top: 30px;
   }
 
   &__content {

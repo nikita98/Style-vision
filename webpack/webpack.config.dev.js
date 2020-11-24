@@ -7,7 +7,6 @@ const common = require("./webpack.common.js");
 
 module.exports = merge(common, {
   mode: "development",
-  devtool: "cheap-eval-source-map",
   output: {
     chunkFilename: "js/[name].chunk.js",
   },
@@ -21,11 +20,6 @@ module.exports = merge(common, {
     }),
     new StylelintPlugin({
       files: Path.join("src", "**/*.s?(a|c)ss"),
-    }),
-    new Webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
-      "window.jQuery": "jquery",
     }),
   ],
   module: {
@@ -50,12 +44,7 @@ module.exports = merge(common, {
       },
       {
         test: /\.s?css$/i,
-        use: [
-          "style-loader",
-          "css-loader?sourceMap=true",
-          "postcss-loader",
-          "sass-loader",
-        ],
+        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
       },
     ],
   },
